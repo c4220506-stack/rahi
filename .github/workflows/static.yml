@@ -1,5 +1,60 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Install dependencies
+        # This forces pnpm to install everything needed for the frontend sub-folder
+        run: pnpm install --filter ./frontend...
+
+      - name: Build
+        # This triggers the specific build process for your frontend
+        run: pnpm --filter ./frontend build
+
+      - name: List Files (Verification)
+        # This confirms where your index.html is located for the next step
+        run: ls -R frontend/dist
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This is where the build command puts the final HTML/JS files
+          # This is the "Gold" folder containing your final index.html
           path: './frontend/dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
