@@ -35,10 +35,12 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install
+        # This tells pnpm to only install what is needed for the frontend
+        run: pnpm install --filter ./frontend...
 
       - name: Build
-        run: pnpm run build
+        # This runs the build script specifically inside the frontend folder
+        run: pnpm --filter ./frontend build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -46,10 +48,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This must match your build output folder (usually 'dist' or 'build')
+          # This points to the resulting folder inside your frontend directory
           path: './frontend/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
