@@ -35,12 +35,14 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        # This tells pnpm to only install what is needed for the frontend
         run: pnpm install --filter ./frontend...
 
       - name: Build
-        # This runs the build script specifically inside the frontend folder
         run: pnpm --filter ./frontend build
+
+      - name: List files (Troubleshooting)
+        # This will show us exactly where the files went in the logs
+        run: ls -R frontend
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -48,8 +50,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This points to the resulting folder inside your frontend directory
-          path: './frontend/dist'
+          # Trying the most common Caffeine output path
+          path: './frontend/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
