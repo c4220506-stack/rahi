@@ -1,36 +1,42 @@
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-const USER_IMAGE =
-  `${import.meta.env.BASE_URL}assets/uploads/patient-woman-1-019d2115-7d26-77dd-b58d-ec10734a9021-1.jpg`;
+const BASE = import.meta.env.BASE_URL;
+const IMAGES = [
+  `${BASE}assets/uploads/slide1-dental-1-019d2ef9-bea0-73f8-ad17-105a93591650-1.jpg`,
+  `${BASE}assets/uploads/slide2-smile-1-019d2ef9-bf11-756b-8f23-de41452cd1ca-2.jpg`,
+  `${BASE}assets/uploads/dermatologist-019d2ef9-bf2e-72bf-8ee4-e1ed5456e29c-3.jpg`,
+  `${BASE}assets/uploads/patient-man-019d2ef9-bfc5-76fa-98d5-7abc9215266e-4.jpg`,
+  `${BASE}assets/uploads/patient-woman-1-019d2ef9-c127-732e-bcf9-a2cbef653fc4-5.jpg`,
+];
 const PRODUCTS = [
   {
     id: 1,
     name: "The Silence Dress",
     description: "Hand-woven linen, bias cut",
     price: "$890",
-    image: USER_IMAGE,
+    image: IMAGES[0],
   },
   {
     id: 2,
     name: "Strata Coat",
     description: "Double-faced wool, structured",
     price: "$1,240",
-    image: USER_IMAGE,
+    image: IMAGES[1],
   },
   {
     id: 3,
     name: "The Void Shirt",
     description: "Japanese cotton voile, oversized",
     price: "$380",
-    image: USER_IMAGE,
+    image: IMAGES[2],
   },
   {
     id: 4,
     name: "Form Trouser",
     description: "Pressed wool, wide leg",
     price: "$620",
-    image: USER_IMAGE,
+    image: IMAGES[3],
   },
 ];
 
