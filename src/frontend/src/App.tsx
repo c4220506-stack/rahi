@@ -2,8 +2,7 @@ import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 const USER_IMAGE =
-  "/assets/uploads/patient-woman-1-019d2115-7d26-77dd-b58d-ec10734a9021-1.jpg";
-
+  `${import.meta.env.BASE_URL}assets/uploads/patient-woman-1-019d2115-7d26-77dd-b58d-ec10734a9021-1.jpg`;
 const PRODUCTS = [
   {
     id: 1,
