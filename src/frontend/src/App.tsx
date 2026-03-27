@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 const BASE = import.meta.env.BASE_URL;
+
 const IMAGES = [
   `${BASE}assets/uploads/slide1-dental-1-019d2ef9-bea0-73f8-ad17-105a93591650-1.jpg`,
   `${BASE}assets/uploads/slide2-smile-1-019d2ef9-bf11-756b-8f23-de41452cd1ca-2.jpg`,
@@ -9,6 +10,7 @@ const IMAGES = [
   `${BASE}assets/uploads/patient-man-019d2ef9-bfc5-76fa-98d5-7abc9215266e-4.jpg`,
   `${BASE}assets/uploads/patient-woman-1-019d2ef9-c127-732e-bcf9-a2cbef653fc4-5.jpg`,
 ];
+
 const PRODUCTS = [
   {
     id: 1,
@@ -80,12 +82,10 @@ function FadeInSection({
     </motion.div>
   );
 }
-
 function NavLink({ children }: { children: React.ReactNode }) {
   return (
     <button
       type="button"
-      data-ocid="nav.link"
       className="font-sans-ui text-rahi-black hover:text-rahi-gray transition-colors duration-200"
       style={{ fontSize: "10px", letterSpacing: "0.2em", fontWeight: 400 }}
     >
@@ -117,16 +117,10 @@ export default function App() {
   };
 
   const year = new Date().getFullYear();
-  const hostname =
-    typeof window !== "undefined"
-      ? encodeURIComponent(window.location.hostname)
-      : "";
 
   return (
     <div className="min-h-screen bg-rahi-cream text-rahi-black">
-      {/* ── STICKY HEADER ── */}
       <header
-        data-ocid="nav.panel"
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
           backgroundColor: scrolled
@@ -139,35 +133,25 @@ export default function App() {
         }}
       >
         <div className="max-w-[1400px] mx-auto px-8 py-5">
-          {/* Wordmark */}
           <div className="text-center mb-3">
-            <button
-              type="button"
-              data-ocid="nav.link"
+            <span
               className="font-display text-rahi-black"
               style={{
                 fontSize: "clamp(48px, 6vw, 80px)",
                 fontWeight: 600,
                 letterSpacing: "-0.02em",
                 lineHeight: 1,
-                background: "none",
-                border: "none",
-                cursor: "pointer",
               }}
             >
               RAHI
-            </button>
+            </span>
           </div>
-          {/* Navigation */}
           <nav className="flex justify-center items-center gap-0">
             {["NEW ARRIVALS", "COLLECTIONS", "THE EDIT", "ABOUT", "STORES"].map(
               (item, i) => (
                 <span key={item} className="flex items-center">
                   {i > 0 && (
-                    <span
-                      className="text-rahi-gray mx-3"
-                      style={{ fontSize: "9px" }}
-                    >
+                    <span className="text-rahi-gray mx-3" style={{ fontSize: "9px" }}>
                       /
                     </span>
                   )}
@@ -175,54 +159,16 @@ export default function App() {
                 </span>
               ),
             )}
-            <span className="text-rahi-gray mx-3" style={{ fontSize: "9px" }}>
-              /
-            </span>
-            <button
-              type="button"
-              data-ocid="nav.button"
-              className="font-sans-ui text-rahi-black hover:text-rahi-gray transition-colors"
-              style={{
-                fontSize: "10px",
-                letterSpacing: "0.2em",
-                fontWeight: 400,
-              }}
-            >
-              SEARCH
-            </button>
-            <span className="text-rahi-gray mx-3" style={{ fontSize: "9px" }}>
-              /
-            </span>
-            <button
-              type="button"
-              data-ocid="nav.button"
-              className="font-sans-ui text-rahi-black hover:text-rahi-gray transition-colors"
-              style={{
-                fontSize: "10px",
-                letterSpacing: "0.2em",
-                fontWeight: 400,
-              }}
-            >
-              BAG (0)
-            </button>
           </nav>
         </div>
       </header>
-
+      
       <main>
-        {/* ── HERO SECTION ── */}
-        <section
-          data-ocid="hero.section"
-          className="pt-40 pb-12 text-center max-w-[1400px] mx-auto px-8"
-        >
+        <section className="pt-40 pb-12 text-center max-w-[1400px] mx-auto px-8">
           <FadeInSection delay={0.1}>
             <p
               className="font-sans-ui text-rahi-gray mb-6"
-              style={{
-                fontSize: "10px",
-                letterSpacing: "0.3em",
-                fontWeight: 400,
-              }}
+              style={{ fontSize: "10px", letterSpacing: "0.3em", fontWeight: 400 }}
             >
               SS26 COLLECTION
             </p>
@@ -246,22 +192,14 @@ export default function App() {
           <FadeInSection delay={0.4}>
             <p
               className="font-sans-ui text-rahi-gray"
-              style={{
-                fontSize: "10px",
-                letterSpacing: "0.3em",
-                fontWeight: 400,
-              }}
+              style={{ fontSize: "10px", letterSpacing: "0.3em", fontWeight: 400 }}
             >
               RAHI — VOLUME III
             </p>
           </FadeInSection>
         </section>
 
-        {/* ── EDITORIAL SECTION ── */}
-        <section
-          data-ocid="editorial.section"
-          className="max-w-[1400px] mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center"
-        >
+        <section className="max-w-[1400px] mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
           <FadeInSection delay={0}>
             <div>
               <p
@@ -272,11 +210,7 @@ export default function App() {
               </p>
               <p
                 className="font-display text-rahi-black leading-snug mb-10"
-                style={{
-                  fontSize: "clamp(22px, 2.8vw, 34px)",
-                  fontWeight: 300,
-                  lineHeight: 1.35,
-                }}
+                style={{ fontSize: "clamp(22px, 2.8vw, 34px)", fontWeight: 300, lineHeight: 1.35 }}
               >
                 Silence speaks in textures.
                 <br />
@@ -293,7 +227,6 @@ export default function App() {
               </p>
               <button
                 type="button"
-                data-ocid="editorial.button"
                 className="font-sans-ui text-rahi-black border border-rahi-black px-8 py-3 hover:bg-rahi-black hover:text-rahi-cream transition-colors duration-300"
                 style={{ fontSize: "10px", letterSpacing: "0.2em" }}
               >
@@ -304,61 +237,36 @@ export default function App() {
           <FadeInSection delay={0.2}>
             <div className="aspect-[3/4] overflow-hidden">
               <img
-                src={USER_IMAGE}
-                alt="Editorial fashion — wide angle"
+                src={IMAGES[4]}
+                alt="Editorial fashion"
                 className="w-full h-full object-cover"
-                style={{
-                  transition: "transform 0.6s ease",
-                  transformOrigin: "center",
-                }}
+                style={{ transition: "transform 0.6s ease", transformOrigin: "center" }}
                 onMouseEnter={(e) => setImageScale(e, "1.03")}
                 onMouseLeave={(e) => setImageScale(e, "1")}
               />
             </div>
-          </FadeInSection>
+               </FadeInSection>
         </section>
 
-        {/* ── DIVIDER ── */}
         <div className="max-w-[1400px] mx-auto px-8">
           <div className="w-full h-px bg-rahi-divider" />
         </div>
 
-        {/* ── PRODUCT GRID ── */}
-        <section
-          data-ocid="products.section"
-          className="max-w-[1400px] mx-auto px-8 py-32"
-        >
+        <section className="max-w-[1400px] mx-auto px-8 py-32">
           <FadeInSection>
             <div className="flex justify-between items-baseline mb-16">
               <h2
                 className="font-display text-rahi-black"
-                style={{
-                  fontSize: "clamp(28px, 3.5vw, 44px)",
-                  fontWeight: 300,
-                }}
+                style={{ fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: 300 }}
               >
                 New Arrivals
               </h2>
-              <button
-                type="button"
-                data-ocid="products.button"
-                className="font-sans-ui text-rahi-gray hover:text-rahi-black transition-colors"
-                style={{ fontSize: "10px", letterSpacing: "0.2em" }}
-              >
-                VIEW ALL
-              </button>
             </div>
           </FadeInSection>
-          <div
-            data-ocid="products.list"
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {PRODUCTS.map((product, i) => (
               <FadeInSection key={product.id} delay={i * 0.1}>
-                <article
-                  data-ocid={`products.item.${i + 1}`}
-                  className="group cursor-pointer"
-                >
+                <article className="group cursor-pointer">
                   <div className="aspect-[3/4] overflow-hidden mb-4">
                     <img
                       src={product.image}
@@ -369,11 +277,7 @@ export default function App() {
                   <div>
                     <p
                       className="font-sans-ui text-rahi-black mb-1"
-                      style={{
-                        fontSize: "11px",
-                        letterSpacing: "0.15em",
-                        fontWeight: 500,
-                      }}
+                      style={{ fontSize: "11px", letterSpacing: "0.15em", fontWeight: 500 }}
                     >
                       {product.name.toUpperCase()}
                     </p>
@@ -385,11 +289,7 @@ export default function App() {
                     </p>
                     <p
                       className="font-sans-ui text-rahi-black"
-                      style={{
-                        fontSize: "11px",
-                        letterSpacing: "0.05em",
-                        fontWeight: 400,
-                      }}
+                      style={{ fontSize: "11px", letterSpacing: "0.05em", fontWeight: 400 }}
                     >
                       {product.price}
                     </p>
@@ -400,20 +300,11 @@ export default function App() {
           </div>
         </section>
 
-        {/* ── PROMO PANELS ── */}
-        <section
-          data-ocid="promo.section"
-          className="max-w-[1400px] mx-auto px-8 pb-32 grid grid-cols-1 md:grid-cols-2 gap-4"
-        >
-          {/* Left panel */}
+        <section className="max-w-[1400px] mx-auto px-8 pb-32 grid grid-cols-1 md:grid-cols-2 gap-4">
           <FadeInSection delay={0}>
-            <div
-              data-ocid="promo.card"
-              className="relative overflow-hidden group cursor-pointer"
-              style={{ aspectRatio: "4/5" }}
-            >
+            <div className="relative overflow-hidden group cursor-pointer" style={{ aspectRatio: "4/5" }}>
               <img
-                src={USER_IMAGE}
+                src={IMAGES[2]}
                 alt="The Luna Coat"
                 className="w-full h-full object-cover"
                 style={{ transition: "transform 0.7s ease" }}
@@ -422,30 +313,17 @@ export default function App() {
               />
               <div
                 className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)",
-                }}
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)" }}
               />
               <div className="absolute bottom-0 left-0 p-8">
-                <p
-                  className="font-sans-ui text-white/70 mb-2"
-                  style={{ fontSize: "9px", letterSpacing: "0.25em" }}
-                >
+                <p className="font-sans-ui text-white/70 mb-2" style={{ fontSize: "9px", letterSpacing: "0.25em" }}>
                   NOW AVAILABLE
                 </p>
-                <h3
-                  className="font-display text-white mb-4"
-                  style={{
-                    fontSize: "clamp(28px, 3vw, 40px)",
-                    fontWeight: 300,
-                  }}
-                >
+                <h3 className="font-display text-white mb-4" style={{ fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 300 }}>
                   The Luna Coat
                 </h3>
                 <button
                   type="button"
-                  data-ocid="promo.button"
                   className="font-sans-ui text-white border border-white/60 px-6 py-2 hover:bg-white hover:text-rahi-black transition-colors duration-300"
                   style={{ fontSize: "9px", letterSpacing: "0.2em" }}
                 >
@@ -455,15 +333,10 @@ export default function App() {
             </div>
           </FadeInSection>
 
-          {/* Right panel */}
           <FadeInSection delay={0.15}>
-            <div
-              data-ocid="promo.card"
-              className="relative overflow-hidden group cursor-pointer"
-              style={{ aspectRatio: "4/5" }}
-            >
+            <div className="relative overflow-hidden group cursor-pointer" style={{ aspectRatio: "4/5" }}>
               <img
-                src={USER_IMAGE}
+                src={IMAGES[3]}
                 alt="Journal — The Edit"
                 className="w-full h-full object-cover"
                 style={{ transition: "transform 0.7s ease" }}
@@ -472,30 +345,17 @@ export default function App() {
               />
               <div
                 className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)",
-                }}
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)" }}
               />
               <div className="absolute bottom-0 left-0 p-8">
-                <p
-                  className="font-sans-ui text-white/70 mb-2"
-                  style={{ fontSize: "9px", letterSpacing: "0.25em" }}
-                >
+                <p className="font-sans-ui text-white/70 mb-2" style={{ fontSize: "9px", letterSpacing: "0.25em" }}>
                   JOURNAL
                 </p>
-                <h3
-                  className="font-display text-white mb-4"
-                  style={{
-                    fontSize: "clamp(28px, 3vw, 40px)",
-                    fontWeight: 300,
-                  }}
-                >
+                <h3 className="font-display text-white mb-4" style={{ fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 300 }}>
                   The Edit
                 </h3>
                 <button
                   type="button"
-                  data-ocid="promo.button"
                   className="font-sans-ui text-white border border-white/60 px-6 py-2 hover:bg-white hover:text-rahi-black transition-colors duration-300"
                   style={{ fontSize: "9px", letterSpacing: "0.2em" }}
                 >
@@ -507,178 +367,74 @@ export default function App() {
         </section>
       </main>
 
-      {/* ── FOOTER ── */}
-      <footer
-        data-ocid="footer.section"
-        className="bg-rahi-footer text-rahi-footer-text"
-      >
+      <footer className="bg-rahi-footer text-rahi-footer-text">
         <div className="max-w-[1400px] mx-auto px-8 py-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            {/* Brand column */}
             <div className="md:col-span-1">
               <h2
                 className="font-display text-rahi-footer-text mb-6"
-                style={{
-                  fontSize: "clamp(36px, 4vw, 52px)",
-                  fontWeight: 300,
-                  letterSpacing: "-0.01em",
-                }}
+                style={{ fontSize: "clamp(36px, 4vw, 52px)", fontWeight: 300, letterSpacing: "-0.01em" }}
               >
                 RAHI
               </h2>
               <p
                 className="font-sans-ui text-rahi-footer-text/50"
-                style={{
-                  fontSize: "10px",
-                  letterSpacing: "0.1em",
-                  lineHeight: 1.8,
-                }}
+                style={{ fontSize: "10px", letterSpacing: "0.1em", lineHeight: 1.8 }}
               >
                 Silence speaks in textures.
                 <br />
                 Quiet luxury, worn daily.
               </p>
             </div>
-
-            {/* Nav columns */}
             <div>
-              <p
-                className="font-sans-ui text-rahi-footer-text/50 mb-5"
-                style={{ fontSize: "9px", letterSpacing: "0.25em" }}
-              >
+              <p className="font-sans-ui text-rahi-footer-text/50 mb-5" style={{ fontSize: "9px", letterSpacing: "0.25em" }}>
                 COLLECTIONS
               </p>
-              {[
-                "SS26 Desert Sonata",
-                "AW25 Archive",
-                "The Essentials",
-                "Limited Editions",
-              ].map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  data-ocid="footer.link"
-                  className="block w-full text-left font-sans-ui text-rahi-footer-text/70 hover:text-rahi-footer-text transition-colors mb-3"
-                  style={{ fontSize: "11px", letterSpacing: "0.05em" }}
-                >
+              {["SS26 Desert Sonata", "AW25 Archive", "The Essentials", "Limited Editions"].map((item) => (
+                <button key={item} type="button" className="block w-full text-left font-sans-ui text-rahi-footer-text/70 hover:text-rahi-footer-text transition-colors mb-3" style={{ fontSize: "11px", letterSpacing: "0.05em" }}>
                   {item}
                 </button>
               ))}
             </div>
-
             <div>
-              <p
-                className="font-sans-ui text-rahi-footer-text/50 mb-5"
-                style={{ fontSize: "9px", letterSpacing: "0.25em" }}
-              >
+              <p className="font-sans-ui text-rahi-footer-text/50 mb-5" style={{ fontSize: "9px", letterSpacing: "0.25em" }}>
                 COMPANY
               </p>
-              {[
-                "About Rahi",
-                "Journal",
-                "Press",
-                "Sustainability",
-                "Careers",
-              ].map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  data-ocid="footer.link"
-                  className="block w-full text-left font-sans-ui text-rahi-footer-text/70 hover:text-rahi-footer-text transition-colors mb-3"
-                  style={{ fontSize: "11px", letterSpacing: "0.05em" }}
-                >
+              {["About Rahi", "Journal", "Press", "Sustainability", "Careers"].map((item) => (
+                <button key={item} type="button" className="block w-full text-left font-sans-ui text-rahi-footer-text/70 hover:text-rahi-footer-text transition-colors mb-3" style={{ fontSize: "11px", letterSpacing: "0.05em" }}>
                   {item}
                 </button>
               ))}
-            </div>
-
-            <div>
-              <p
-                className="font-sans-ui text-rahi-footer-text/50 mb-5"
-                style={{ fontSize: "9px", letterSpacing: "0.25em" }}
-              >
-                STORES
-              </p>
-              {["New York", "Paris", "Tokyo", "London"].map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  data-ocid="footer.link"
-                  className="block w-full text-left font-sans-ui text-rahi-footer-text/70 hover:text-rahi-footer-text transition-colors mb-3"
-                  style={{ fontSize: "11px", letterSpacing: "0.05em" }}
-                >
-                  {item}
-                </button>
-              ))}
-
-              {/* Email signup */}
-              <div className="mt-8">
-                <p
-                  className="font-sans-ui text-rahi-footer-text/50 mb-3"
-                  style={{ fontSize: "9px", letterSpacing: "0.25em" }}
-                >
-                  NEWSLETTER
-                </p>
-                {emailSubmitted ? (
-                  <p
-                    data-ocid="newsletter.success_state"
-                    className="font-sans-ui text-rahi-footer-text/70"
-                    style={{ fontSize: "10px", letterSpacing: "0.1em" }}
-                  >
-                    THANK YOU
-                  </p>
-                ) : (
-                  <form onSubmit={handleEmailSubmit} className="flex">
-                    <input
-                      data-ocid="newsletter.input"
-                      type="email"
-                      value={emailValue}
-                      onChange={(e) => setEmailValue(e.target.value)}
-                      placeholder="Your email"
-                      className="flex-1 bg-transparent border-b border-rahi-footer-text/30 text-rahi-footer-text placeholder-rahi-footer-text/30 focus:outline-none focus:border-rahi-footer-text pb-1 pr-2"
-                      style={{ fontSize: "11px", letterSpacing: "0.05em" }}
-                    />
-                    <button
-                      data-ocid="newsletter.submit_button"
-                      type="submit"
-                      className="text-rahi-footer-text/50 hover:text-rahi-footer-text transition-colors pl-2 pb-1"
-                      aria-label="Subscribe"
-                    >
-                      →
-                    </button>
-                  </form>
-                )}
               </div>
+            <div>
+              <p className="font-sans-ui text-rahi-footer-text/50 mb-5" style={{ fontSize: "9px", letterSpacing: "0.25em" }}>
+                NEWSLETTER
+              </p>
+              {emailSubmitted ? (
+                <p className="font-sans-ui text-rahi-footer-text/70" style={{ fontSize: "10px", letterSpacing: "0.1em" }}>
+                  THANK YOU
+                </p>
+              ) : (
+                <form onSubmit={handleEmailSubmit} className="flex">
+                  <input
+                    type="email"
+                    value={emailValue}
+                    onChange={(e) => setEmailValue(e.target.value)}
+                    placeholder="Your email"
+                    className="flex-1 bg-transparent border-b border-rahi-footer-text/30 text-rahi-footer-text placeholder-rahi-footer-text/30 focus:outline-none focus:border-rahi-footer-text pb-1 pr-2"
+                    style={{ fontSize: "11px", letterSpacing: "0.05em" }}
+                  />
+                  <button type="submit" className="text-rahi-footer-text/50 hover:text-rahi-footer-text transition-colors pl-2 pb-1" aria-label="Subscribe">
+                    →
+                  </button>
+                </form>
+              )}
             </div>
           </div>
-
-          {/* Footer bottom */}
-          <div
-            className="border-t pt-8"
-            style={{ borderColor: "oklch(0.95 0.009 75 / 0.1)" }}
-          >
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-              <p
-                className="font-sans-ui text-rahi-footer-text/40"
-                style={{ fontSize: "9px", letterSpacing: "0.15em" }}
-              >
-                © {year} RAHI. ALL RIGHTS RESERVED.
-              </p>
-              <p
-                className="font-sans-ui text-rahi-footer-text/40"
-                style={{ fontSize: "9px", letterSpacing: "0.15em" }}
-              >
-                Built with ♥ using{" "}
-                <a
-                  href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${hostname}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-rahi-footer-text/70 transition-colors"
-                >
-                  caffeine.ai
-                </a>
-              </p>
-            </div>
+          <div className="border-t pt-8" style={{ borderColor: "oklch(0.95 0.009 75 / 0.1)" }}>
+            <p className="font-sans-ui text-rahi-footer-text/40" style={{ fontSize: "9px", letterSpacing: "0.15em" }}>
+              © {year} RAHI. ALL RIGHTS RESERVED.
+            </p>
           </div>
         </div>
       </footer>
