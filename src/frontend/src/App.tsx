@@ -3,14 +3,15 @@ import { useEffect, useRef, useState } from "react";
 
 const BASE = import.meta.env.BASE_URL;
 
-const IMAGES = [
-  `${BASE}assets/uploads/slide1-dental-1-019d2ef9-bea0-73f8-ad17-105a93591650-1.jpg`,
-  `${BASE}assets/uploads/slide2-smile-1-019d2ef9-bf11-756b-8f23-de41452cd1ca-2.jpg`,
-  `${BASE}assets/uploads/dermatologist-019d2ef9-bf2e-72bf-8ee4-e1ed5456e29c-3.jpg`,
-  `${BASE}assets/uploads/patient-man-019d2ef9-bfc5-76fa-98d5-7abc9215266e-4.jpg`,
-  `${BASE}assets/uploads/patient-woman-1-019d2ef9-c127-732e-bcf9-a2cbef653fc4-5.jpg`,
-];
+const BASE = import.meta.env.BASE_URL;
 
+const IMAGES = [
+  `${BASE}assets/uploads/slide1-dental-1.jpg`,
+  `${BASE}assets/uploads/slide2-smile-1.jpg`,
+  `${BASE}assets/uploads/dermatologist.jpg`,
+  `${BASE}assets/uploads/patient-man.jpg`,
+  `${BASE}assets/uploads/patient-woman-1.jpg`,
+];
 const PRODUCTS = [
   {
     id: 1,
